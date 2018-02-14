@@ -10,19 +10,6 @@ import pymongo
 import os.path
 
 
-HOST = os.getenv('HOST') or "https://localhost:9091/"
-AUTHORIZATION = os.getenv('AUTHORIZATION') or 'admin@domrock.com.br:teste12'
-MONGO_HOST = os.getenv('MONGO_HOST') or 'mongodb://localhost:27017'
-MONGO_USER = os.getenv('MONGO_USER') or ''
-MONGO_PASS = os.getenv('MONGO_PASS') or ''
-MONGO_DB = os.getenv('MONGO_DB') or 'DB_59a066f2c971181acd917f17'
-COLLECTION_NAME = "RelatorioSBKSantanderProcessos"
-
-#connection =  pymongo.MongoClient(MONGO_HOST, username=MONGO_USER, password=MONGO_PASS, authSource=MONGO_DB, authMechanism='SCRAM-SHA-1')
-connection =  pymongo.MongoClient(MONGO_HOST, username=MONGO_USER, password=MONGO_PASS, authMechanism='SCRAM-SHA-1')
-PORT = 8080
-
-
 def authenticate_esb(host, auth):
     """
     Faz a autenticação com a plataforma e retorna uma sessão autenticada
